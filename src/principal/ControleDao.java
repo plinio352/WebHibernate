@@ -6,17 +6,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 public class ControleDao extends DAO {
-	private EntityManager em;
+	private EntityManager em = getEntityManager().createEntityManager();
 
 	public void salvar(Padrao p){
-		em = getEntityManager().createEntityManager();
+		
 		try{
 			if(!em.getTransaction().isActive()){
-				System.out.println("Ativo");
-				em.getTransaction().begin();
-				
-			}
-			
+				em.getTransaction().begin();				
+			}			
 			em.persist(p);
 			em.getTransaction().commit();
 			em.close();
@@ -28,7 +25,7 @@ public class ControleDao extends DAO {
 	}
 	
 	public List<Padrao> exibir(String sql){
-		em = getEntityManager().createEntityManager();
+		
 		try{
 			Query q = em.createQuery(sql);
 			return q.getResultList();

@@ -17,7 +17,7 @@
 <%
 	TbTeste t = new TbTeste();
 	t.setIdade(12);
-	t.setNome("Manuel");
+	t.setNome("Plinio P");
 	t.setSalario(45.0);
 	
 	

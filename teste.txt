@@ -1,1 +1,27 @@
-"# inicio repositorio" 
+projeto no repositorio git:
+	https://github.com/plinio352/WebHibernate.git
+Solução:
+	<persistence-unit name="mysql" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>principal.TbTeste</class>
+		
+		<properties>
+			<property name="hibernate.dialect" 					value="org.hibernate.dialect.MySQLDialect"/>
+			<property name="hibernate.connection.driver_class" 	value="com.mysql.jdbc.Driver"/>
+			<property name="hibernate.connection.url" 			value="jdbc:mysql://localhost:3306/plinio"/>
+			<property name="hibernate.connection.user" 			value="lixo"/>
+			<property name="hibernate.connection.password" 		value="root"/>
+
+			<property name="hibernate.hbm2ddl.auto" 			value="create"/>
+			<property name="hibernate.show_sql" 				value="true"/>
+			<property name="hibernate.format_sql" 				value="true"/>			
+         	<property name="hibernate.use_sql_comments" 		value="true" />
+
+         	<property name="hibernate.max_fetch_depth" 			value="3"/>
+         	<property name="hibernate.jdbc.batch_size" 			value="50" />
+         	<property name="hibernate.connection.charSet" 		value="UTF-8" />
+         	
+		</properties>
+		
+	</persistence-unit>
